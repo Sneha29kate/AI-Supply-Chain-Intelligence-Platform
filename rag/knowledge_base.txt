@@ -1,0 +1,9 @@
+Shipment delays can occur because of weather conditions.
+
+Air shipping is the fastest mode of transport.
+
+Sea shipping is economical but slower.
+
+Warehouse congestion may cause shipment delays.
+
+High priority orders are processed before low priority orders.
