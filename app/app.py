@@ -114,16 +114,16 @@ if page == "Shipment Delay Prediction":
             delayed_value = 1
 
         save_shipment(
-    distance=distance,
-    warehouse=str(warehouse),
-    shipping_mode=str(shipping_mode),
-    priority=str(priority),
-    delayed=delayed_value
-)
+        distance=distance,
+        warehouse=str(warehouse),
+        shipping_mode=str(shipping_mode),
+        priority=str(priority),
+        delayed=delayed_value
+        )
 
-st.success(
-    "✅ Record saved to PostgreSQL"
-)
+        st.success(
+        "✅ Record saved to PostgreSQL"
+         )
 
         if hasattr(model, "predict_proba"):
 
