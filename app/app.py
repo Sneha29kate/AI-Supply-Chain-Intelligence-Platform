@@ -150,7 +150,7 @@ elif page == "Analytics":
         "📊 Supply Chain Analytics Dashboard"
     )
 
-    df = get_shipments()
+    df = pd.read_csv("data/shipment_data.csv")
 
     st.subheader(
         "Shipment Records"
@@ -357,19 +357,17 @@ elif page == "Weather Delay Risk":
             st.success(
                 risk
             )
+  # save_weather(
+#     city,
+#     temp,
+#     humidity,
+#     weather_desc,
+#     risk
+# )
 
-            save_weather(
-                city,
-                temp,
-                humidity,
-                weather_desc,
-                risk
-            )
-
-            st.success(
-                "✅ Weather record saved"
-            )
-
+# st.success(
+#     "✅ Weather record saved"
+# )
         else:
 
             st.error(
