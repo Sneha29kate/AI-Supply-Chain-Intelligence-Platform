@@ -1,1 +1,9 @@
+streamlit
+pandas
+numpy
+matplotlib
+scikit-learn
 joblib
+psycopg2-binary
+requests
+google-generativeai
