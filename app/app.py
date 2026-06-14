@@ -8,20 +8,17 @@ sys.path.append(
         )
     )
 )
+
 import streamlit as st
 import joblib
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from database.save_shipment import save_shipment
-from database.fetch_shipments import get_shipments
 from forecasting.demand_forecasting import forecast_demand
 from weather.weather_api import get_weather
-from database.save_weather import save_weather
-# from database.save_shipment import save_shipment
-# from database.fetch_shipments import get_shipments
-# from database.save_weather import save_weather
+
+
 st.set_page_config(
     page_title="AI Supply Chain Intelligence Platform",
     layout="wide"
@@ -113,18 +110,11 @@ if page == "Shipment Delay Prediction":
 
             delayed_value = 1
 
-        save_shipment(
-        distance=distance,
-        warehouse=str(warehouse),
-        shipping_mode=str(shipping_mode),
-        priority=str(priority),
-        delayed=delayed_value
-        )
+        
 
-        st.success(
-        "✅ Record saved to PostgreSQL"
-         )
-
+# st.success(
+#     "✅ Record saved to PostgreSQL"
+# )
         if hasattr(model, "predict_proba"):
 
             prob = model.predict_proba(
