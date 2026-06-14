@@ -144,6 +144,7 @@ if page == "Shipment Delay Prediction":
             )
 
 # ==================================================
+# ==================================================
 # ANALYTICS DASHBOARD
 # ==================================================
 
@@ -153,18 +154,23 @@ elif page == "Analytics":
         "📊 Supply Chain Analytics Dashboard"
     )
 
-    df = pd.read_csv("data/shipment_data.csv")
+    df = pd.read_csv(
+        "data/shipment_data.csv"
+    )
 
     st.subheader(
         "Shipment Records"
     )
 
-    st.dataframe(df)
+    st.dataframe(
+        df,
+        use_container_width=True
+    )
 
     total_shipments = len(df)
 
     delayed_shipments = (
-        df["delayed"].sum()
+        df["Delayed"].sum()
     )
 
     on_time_shipments = (
@@ -219,7 +225,7 @@ elif page == "Analytics":
     )
 
     warehouse_counts = (
-        df["warehouse"]
+        df["Warehouse"]
         .value_counts()
     )
 
@@ -230,8 +236,19 @@ elif page == "Analytics":
         ax=ax2
     )
 
-    st.pyplot(fig2)
+    ax2.set_xlabel(
+        "Warehouse"
+    )
 
+    ax2.set_ylabel(
+        "Number of Shipments"
+    )
+
+    ax2.set_title(
+        "Shipments by Warehouse"
+    )
+
+    st.pyplot(fig2)
 # ==================================================
 # DEMAND FORECASTING
 # ==================================================
